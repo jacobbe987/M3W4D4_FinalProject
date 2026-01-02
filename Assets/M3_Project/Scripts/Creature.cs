@@ -21,7 +21,7 @@ public abstract class Creature : MonoBehaviour
 
     public virtual void Dead()
     {
-        
-        Destroy(gameObject);
+        GetComponent<Collider2D>().enabled = false;
+        Destroy(gameObject,1f);
     }
 }

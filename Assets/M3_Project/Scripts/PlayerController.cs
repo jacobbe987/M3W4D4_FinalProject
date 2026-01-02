@@ -9,6 +9,7 @@ public class PlayerController : Creature
     private Rigidbody2D _rb;
     private Vector2 _direction;
     private PlayerAnimation _playerAnimation;
+    private bool _isDead = false;
 
     public Vector2 Direction { get => _direction; }
 
@@ -21,6 +22,7 @@ public class PlayerController : Creature
 
     private void FixedUpdate()
     {
+        if (_isDead) return;
         Movement();
         _playerAnimation.IsWalking();
     }
@@ -34,6 +36,15 @@ public class PlayerController : Creature
         _rb.MovePosition(_rb.position + _direction * (Time.fixedDeltaTime * _speed));
         
 
+    }
+
+    public override void Dead()
+    {
+        base.Dead();
+        _playerAnimation.IsDead();
+        _isDead = true;
+        
+        
     }
 
     

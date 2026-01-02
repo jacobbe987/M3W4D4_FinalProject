@@ -10,12 +10,15 @@ public class EnemyController : Creature
     [SerializeField] protected Pickups[] _objToDrop;
 
     protected EnemyManager _enemyManager;
+    private Animator _animator;
+    private bool _isDead = false;
 
     protected override void Awake()
     {
         base.Awake();
         _enemyManager = FindObjectOfType<EnemyManager>();
         _enemyManager.AddEnemyToList(this);
+        _animator = GetComponent<Animator>();
         if (_enemyWeapon != null)
         {
             Instantiate(_enemyWeapon, transform);
@@ -25,7 +28,7 @@ public class EnemyController : Creature
     
     protected virtual void EnemyAction()
     {
-        
+
     }
 
     private void DropRate()
@@ -80,13 +83,16 @@ public class EnemyController : Creature
 
     private void FixedUpdate()
     {
+        if (_isDead) return;
         EnemyAction();
     }
 
     public override void Dead()
     {
         base.Dead();
+        _animator.SetBool("IsDead", true);
         _enemyManager.RemoveEnemyFromList(this);
+        _isDead = true;
         DropRate();
     }
 

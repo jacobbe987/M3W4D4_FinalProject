@@ -5,11 +5,13 @@ using UnityEngine;
 public class EnemySaw : EnemyController
 {
     private PlayerController _playerController;
+    
 
     protected override void Awake()
     {
         base.Awake();
         _playerController = FindObjectOfType<PlayerController>();
+        
     }
     protected override void EnemyAction()
     {
@@ -28,6 +30,7 @@ public class EnemySaw : EnemyController
         if (collision.collider.TryGetComponent<PlayerController>(out var player))
         {
             base.Dead();
+            
         }
 
     }

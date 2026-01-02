@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerAnimation : MonoBehaviour
 {
-    //private PlayerController _playerController;
+    
     private PlayerController _playerController;
     private Animator _animator;
     private SpriteRenderer _spriteRenderer;
@@ -45,5 +45,10 @@ public class PlayerAnimation : MonoBehaviour
         {
             _spriteRenderer.flipX = false;
         }
+    }
+
+    public void IsDead()
+    {
+        _animator.SetBool("IsDead", true);
     }
 }
