@@ -14,6 +14,11 @@ public class BulletEnemy : Bullet
         {
             
             player.Hitted(_dmg);
+            //if (_lifeController.Shield <= 0)
+            //{
+            //    GameObject _shield = GameObject.FindGameObjectWithTag("Shield");
+            //    Destroy(_shield);
+            //}
             if (_lifeController.Hp <= 0)
             {
                 player.Dead();

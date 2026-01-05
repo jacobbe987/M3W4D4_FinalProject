@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerController : Creature
 {
     [SerializeField] private float _speed;
+    [SerializeField] public GameObject _shieldPrefab;
     private float _horizontal, _vertical;
     private Rigidbody2D _rb;
     private Vector2 _direction;
@@ -36,6 +37,14 @@ public class PlayerController : Creature
         _rb.MovePosition(_rb.position + _direction * (Time.fixedDeltaTime * _speed));
         
 
+    }
+
+    public void Shield()
+    {
+        if (_lifeController.Shield != 0)
+        {
+            Instantiate(_shieldPrefab, transform);
+        }
     }
 
     public override void Dead()

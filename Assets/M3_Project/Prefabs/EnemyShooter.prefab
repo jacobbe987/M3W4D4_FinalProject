@@ -113,6 +113,7 @@ MonoBehaviour:
   - {fileID: 1866845380266149274, guid: caff42d4975c01b48ae9a1f953921bb6, type: 3}
   - {fileID: 1866845380266149274, guid: d9c1124d021e0f648831f4e7dfa9091e, type: 3}
   - {fileID: 1866845380266149274, guid: df10efd8116ed254683c00d5fabd0651, type: 3}
+  - {fileID: 1866845380266149274, guid: 04c89eebe9a0b794a859f8ab6ee3f05f, type: 3}
 --- !u!50 &1356192225898033634
 Rigidbody2D:
   serializedVersion: 4
@@ -220,3 +221,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _Hp: 100
   _maxHp: 500
+  _shield: 0
+  _maxShield: 0

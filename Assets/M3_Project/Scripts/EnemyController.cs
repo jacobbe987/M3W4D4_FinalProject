@@ -63,6 +63,10 @@ public class EnemyController : Creature
         {
             Instantiate(_objToDrop[6], transform.position, Quaternion.identity);
         }
+        else if (_randomDropRate <= 80 && _randomDropRate > 70)
+        {
+            Instantiate(_objToDrop[7], transform.position, Quaternion.identity);
+        }
     }
 
     protected virtual void OnCollisionEnter2D(Collision2D collision)

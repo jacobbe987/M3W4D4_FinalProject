@@ -9,9 +9,11 @@ public class WeaponsEquipped : MonoBehaviour
     public void Start()
     {
         EquipWeapon(_startWeapon);
+
     }
     public void EquipWeapon(Weapon weapon)
     {
-        Instantiate(weapon,transform);
+        Instantiate(weapon, transform);
+
     }
 }

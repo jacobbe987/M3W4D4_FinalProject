@@ -198,6 +198,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _name: Franco
   _speed: 4
+  _shieldPrefab: {fileID: 6092097042990826825, guid: 355498b3c9c574c49a3189741b22223a, type: 3}
 --- !u!114 &3879211769153185591
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -237,3 +238,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _Hp: 100
   _maxHp: 500
+  _shield: 0
+  _maxShield: 100
